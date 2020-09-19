@@ -1,5 +1,19 @@
 @startuml
 
+class ACSReader {
+    - float voltage
+    - float lastVal
+    - float suppliedWatts
+    - int lastProcessTime
+    + ACS712 acs
 
+    + ACSReader(float refVoltage, uint8_t pin, 
+      float voltage, uint16_t maxADC, uint8_t mVperA)
+    + float getMedianDC(int loops, int msInterval)
+    + float getWatt()
+    + float getSuppliedWatt()
+    + char* getSuppliedWattString()
+    + char* getWorkingTime()
+}
 
 @enduml
