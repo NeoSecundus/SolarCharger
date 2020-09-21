@@ -17,7 +17,7 @@ void setup() {
     Serial.begin(9600);
 
     if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address 0x3C for 128x32
-        Serial.println("SSD1306 allocation failed");
+        Serial.println("SSD1306 allocation failed!");
     }
 
     display.display();
@@ -25,7 +25,7 @@ void setup() {
     display.clearDisplay();
     display.display();
 
-    acsr.acs.setMidPoint(840);
+    acsr.acs.autoMidPoint();
 }
 
 void loop() {

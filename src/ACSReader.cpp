@@ -18,7 +18,7 @@ class ACSReader {
         float mA = 0;
         int curProcessTime = 0;
         for (int i = 0; i < loops; i++) {
-            mA += (float)acs.mA_DC();
+            mA -= (float)acs.mA_DC();
             delay(msInterval);
         }
         lastVal = mA/loops;
